@@ -35,8 +35,26 @@ const Footer = () => {
                             <div className='mt-5 grid grid-cols-1 md:grid-cols-3 gap-5 align-top pb-8'>
                                 <div className="about space-y-3">
 
-                                    <h3 className='text-lg font-semibold'>About</h3>
-                                    <p className=''>We are a passionate team dedicated to providing the best services to our customers.</p>
+                                    <div className='space-y-3'>
+                                        <h3 className='text-lg font-semibold'>About</h3>
+                                        <p className=''>We are a passionate team dedicated to providing the best services to our customers.</p>
+
+                                    </div>
+                                    <div className=''>
+                                        <h3 className='text-lg font-semibold'>Follow Us</h3>
+                                        <div className="footer-icon-container flex items-center">
+                                            <a href="https://www.facebook.com/engr.indrojit.mondal">
+                                                <img src="https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" className='w-20 h-20' alt="Facebook" />
+                                            </a>
+                                            <a href="">
+                                                <img src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png" className='w-20 h-20'  alt="LinkedIn" />
+                                            </a>
+                                            <a href="">
+                                                <img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/575/small/youtube-logo-youtube-icon-transparent-free-png.png" className='w-20 h-20' alt="Twitter" />
+                                            </a>
+                                        </div>
+
+                                    </div>
 
                                 </div>
                                 <div className="links pl-10">
