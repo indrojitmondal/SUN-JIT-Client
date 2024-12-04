@@ -34,7 +34,7 @@ const Profile = () => {
 
 
                 <div className="avatar">
-                    <div className="w-20 h-20  rounded-full">
+                    <div className="w-16 h-16 lg:w-20 lg:h-20  rounded-full">
                         <img className='' title={user.displayName} src={user.photoURL} />
                     </div>
 
@@ -56,7 +56,7 @@ const Profile = () => {
 
 
 
-                <button onClick={handleLogOut} className='px-4 py-1 text-white text-lg'>Log Out</button>
+                <button onClick={handleLogOut} className='px-4 py-1 text-white lg:text-lg'>Log Out</button>
             </div>
             {/* <h2 className='block md:hidden'>{user.email}</h2> */}
             {/* <div className='block md:hidden space-y-1 mt-2 md:space-y-3'>
