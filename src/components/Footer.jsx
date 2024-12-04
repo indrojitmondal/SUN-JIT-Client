@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
-  
+
 
 
 
@@ -18,7 +18,7 @@ const Footer = () => {
 
 
 
-               
+
 
 
 
@@ -29,7 +29,7 @@ const Footer = () => {
                         {/* start from here */}
                         <div className='text-white  bg-black'>
 
-                            <img className='mx-auto pt-4 mt-36 md:mt-0 w-28 h-28' src="https://i.ibb.co.com/HCQbjMS/logo.png" alt="" />
+                            <img className='mx-auto pt-4 mt-36 md:mt-0 w-36 h-36' src="https://i.ibb.co.com/HCQbjMS/logo.png" alt="" />
 
 
                             <div className='mt-5 grid grid-cols-1 md:grid-cols-3 gap-5 align-top pb-8'>
@@ -58,7 +58,7 @@ const Footer = () => {
                                 </div>
                                 <div className="subscribes flex flex-col space-y-3 ">
 
-                                    <h3 className='text-lg font-semibold'>Subscribe</h3>
+                                    {/* <h3 className='text-lg font-semibold'>Subscribe</h3>
                                     <p className=''>Subscribe to our newsletter for the latest updates.</p>
 
                                     <div className="  flex items-center gap-4">
@@ -66,7 +66,21 @@ const Footer = () => {
                                         <button
                                            
                                             className="gradient-button">Subscribe</button>
-                                    </div>
+                                    </div> */}
+
+                                    <h3 className='text-lg font-semibold'>Our Address</h3>
+
+                                    <iframe
+                                        className="google-map"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14734.484963348057!2d89.3156934!3d22.59326515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a01d42e13245d21%3A0x663812c70649e60f!2sPaikgachha!5e0!3m2!1sen!2sbd!4v1733338193489!5m2!1sen!2sbd"
+
+
+                                        allowFullScreen=""
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                    />
+
+
 
 
                                 </div>

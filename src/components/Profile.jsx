@@ -34,7 +34,7 @@ const Profile = () => {
 
 
                 <div className="avatar">
-                    <div className="w-16 h-16 lg:w-20 lg:h-20  rounded-full">
+                    <div className="w-14 h-14 lg:w-20 lg:h-20  rounded-full">
                         <img className='' title={user.displayName} src={user.photoURL} />
                     </div>
 

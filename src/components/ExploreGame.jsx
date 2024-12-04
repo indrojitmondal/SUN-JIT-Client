@@ -31,7 +31,7 @@ const ExploreGame = () => {
                             </svg>
                             How we work
                         </h3> */}
-                        <h1 className="font-bold text-center text-p2 mt-1 md:text-3xl">TYPE OF GAMES</h1>
+                        <h1 className="font-bold text-center text-p2 mt-1 text-3xl">TYPE OF GAMES</h1>
                         <p className="text-text_color text-sm lg:text-base font-medium">
                         Games come in various forms, offering diverse experiences that cater to different interests. From immersive story-driven adventures and strategic puzzles to action-packed challenges and educational simulations, each type of game is designed to entertain, engage, and inspire creativity. By blending innovation with captivating gameplay, games deliver unforgettable moments that resonate with players of all ages.
                         </p>
