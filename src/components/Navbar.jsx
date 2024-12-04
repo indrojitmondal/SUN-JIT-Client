@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CgMenu } from "react-icons/cg";
 import { Link } from 'react-router-dom';
+import { AuthContext } from './providers/AuthProvider';
+import Profile from './Profile';
 const Navbar = () => {
+  const { user} = useContext(AuthContext);
   const links = <div className='flex flex-col md:flex-row items-center gap-5'>
        <Link>Home</Link>
        <Link>All Reviews</Link>
@@ -49,25 +52,35 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            {/* <li><a>Item 1</a></li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a>Item 3</a></li> */}
+           
             {links}
           </ul>
         </div>
-        <div className="navbar-end flex items-center gap-5">
        
-          <Link to={'/login'}   className='text-yellow-300'>Login</Link>
-          <Link to={'/register'}  className='text-yellow-300'>Register</Link>
-        </div>
+        {
+                    user ?
+
+
+
+                        <div className="navbar-end md:text-lg flex gap-5 items-center">
+
+
+
+                            <Profile></Profile>
+
+
+                        </div> :
+                        
+                        <div className="navbar-end flex items-center gap-5">
+       
+                        <Link to={'/login'}   className='text-yellow-300'>Login</Link>
+                        <Link to={'/register'}  className='text-yellow-300'>Register</Link>
+                      </div>
+
+
+                }
+
+        
       </div>
     );
 };
