@@ -29,7 +29,7 @@ const Contact = () => {
                              <MdOutlineMail className='text-2xl' />
                             <div>
                                 <h3 className="text-xl">Send US an email</h3>
-                                <p>paikgachadotcom@gmail.com</p>
+                                <p>sun@jit.com</p>
                             </div>
                         </div>
 
@@ -161,7 +161,7 @@ const Contact = () => {
                         </div>
                         <div className="form-control">
                             <button
-                                className="block w-2/4 h-14 md:h-16 border hover:border-primary border-primary bg-primary hover:text-primary hover:bg-white text-white outline-none p-2 md:text-xl"
+                                className="block w-2/4 h-14 md:h-16 border hover:border-primary border-primary bg-header_bg hover:text-primary hover:bg-white text-white outline-none p-2 md:text-xl"
                                 type="submit"
                                 id="sendButton"
                             >

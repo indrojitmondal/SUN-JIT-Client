@@ -66,7 +66,7 @@ const Navbar = () => {
         <div className="navbar-end flex items-center gap-5">
        
           <Link to={'/login'}   className='text-yellow-300'>Login</Link>
-          <Link  className='text-yellow-300'>Register</Link>
+          <Link to={'/register'}  className='text-yellow-300'>Register</Link>
         </div>
       </div>
     );

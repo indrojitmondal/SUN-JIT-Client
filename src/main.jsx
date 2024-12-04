@@ -11,6 +11,7 @@ import Root from './components/Root.jsx';
 import MainLayout from './components/layoutComponent/MainLayout.jsx';
 import AuthProvider from './components/providers/AuthProvider.jsx';
 import Login from './components/Login.jsx';
+import Register from './components/Register.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,10 +58,10 @@ const router = createBrowserRouter([
   //   path:'/reset-password',
   //   element: <UpdatePassword></UpdatePassword>
   // },
-  // {
-  //   path:'/register',
-  //   element: <Register></Register>
-  // },
+  {
+    path:'/register',
+    element: <Register></Register>
+  },
   // {
   //   path: '*',
   //   element : <ErrorPage></ErrorPage>
