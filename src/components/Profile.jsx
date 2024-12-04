@@ -8,24 +8,24 @@ import { AuthContext } from './providers/AuthProvider';
 
 
 const Profile = () => {
-    const { user, setUser,targetPath, setTargetPath } = useContext(AuthContext);
-    
-    console.log("User:",user.photoURL);
+    const { user, setUser, targetPath, setTargetPath } = useContext(AuthContext);
+
+    console.log("User:", user.photoURL);
     const location = useLocation();
     const path = location.pathname;
-    const handleLogOut= ()=>{
+    const handleLogOut = () => {
 
         signOut(auth).then(() => {
 
-             setUser('');
-          setTargetPath('/');
-         <Navigate to={'/'}></Navigate>
+            setUser('');
+            setTargetPath('/');
+            <Navigate to={'/'}></Navigate>
             // Sign-out successful.
-          }).catch((error) => {
+        }).catch((error) => {
             // An error happened.
-          });
+        });
 
-         
+
     }
     return (
         <div>
@@ -35,8 +35,16 @@ const Profile = () => {
 
                 <div className="avatar">
                     <div className="w-12 h-12  rounded-full">
-                        <img className='' src={user.photoURL} />
+                        <img className='' title={user.displayName} src={user.photoURL} />
                     </div>
+
+                    {/* <div className="tooltip w-12 h-12 " data-tip='Hello'>
+                    <img className=''  src={user.photoURL} />
+                        
+                    
+                    </div> */}
+                    
+
                 </div>
 
                 {/* <div className='hidden md:block'>
@@ -45,7 +53,7 @@ const Profile = () => {
                 </div> */}
 
 
-           
+
 
 
                 <button onClick={handleLogOut} className='px-4 py-1 text-white text-sm'>Log Out</button>
