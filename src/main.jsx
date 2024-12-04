@@ -15,6 +15,8 @@ import Register from './components/Register.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import AddReviews from './components/AddReviews.jsx';
 import MyReview from './components/MyReview.jsx';
+import GameWatchList from './components/GameWatchList.jsx';
+import AllReview from './components/AllReview.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
         path: '',
         element :  <MainLayout></MainLayout>
       },
+      {
+        path: '/all-review',
+        element: <AllReview></AllReview>
+      },
      
       {
         path: '/add-review',
@@ -34,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: '/my-review',
         element : <PrivateRoute> <MyReview></MyReview>  </PrivateRoute> 
+      },
+      {
+        path: '/game-watch-list',
+        element : <PrivateRoute> <GameWatchList></GameWatchList>  </PrivateRoute> 
       },
      
 

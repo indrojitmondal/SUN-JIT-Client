@@ -6,8 +6,8 @@ import Profile from './Profile';
 const Navbar = () => {
   const { user } = useContext(AuthContext);
   const links = <div className='flex flex-col md:flex-row items-center text-lg gap-5'>
-    <NavLink>Home</NavLink>
-    <NavLink>All Reviews</NavLink>
+    <NavLink to={'/'}>Home</NavLink>
+    <NavLink to={'/all-review'}>All Reviews</NavLink>
     {
       user && <NavLink to={'/add-review'}>Add Review</NavLink>
     }
@@ -15,7 +15,7 @@ const Navbar = () => {
       user && <NavLink to={'/my-review'}>My Reviews</NavLink>
     }
     {
-      user && <NavLink>Game WatchList </NavLink>
+      user && <NavLink to={'/game-watch-list'}>Game WatchList </NavLink>
     }
 
 
