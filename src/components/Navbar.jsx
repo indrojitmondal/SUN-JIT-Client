@@ -64,7 +64,7 @@ const Navbar = () => {
           {links}
         </ul>
 
-        <div className="form-control">
+        <div className="form-control mt-2">
           <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
         </div>
 

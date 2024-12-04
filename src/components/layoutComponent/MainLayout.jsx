@@ -8,8 +8,9 @@ const MainLayout = () => {
     return (
         <div>
               <Sliders></Sliders>
-              <HighestRatedGame></HighestRatedGame>
               <ExploreGame></ExploreGame>
+              <HighestRatedGame></HighestRatedGame>
+              
               <Contact></Contact>
         </div>
     );
