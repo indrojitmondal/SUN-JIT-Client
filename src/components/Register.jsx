@@ -9,6 +9,7 @@ import { updateProfile } from 'firebase/auth';
 import logo from '../assets/logo.png'
 import { auth } from './firebase/firebase.init';
 import { AuthContext } from './providers/AuthProvider';
+import Swal from 'sweetalert2';
 const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false);
@@ -85,6 +86,13 @@ const Register = () => {
                     // console.log('Okay?', result.user);
 
                     setUser(result.user);
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Successfully Registered",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
                     navigate('/');
 
                 })

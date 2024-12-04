@@ -9,6 +9,7 @@ import { sendPasswordResetEmail, updateProfile } from 'firebase/auth';
 // import logo from '../assets/logo.png'
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { AuthContext } from './providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 
@@ -47,16 +48,17 @@ const Login = () => {
         // console.log(password);
         signInUser(email, password)
             .then(result => {
-                // console.log('Hello....', result.user);
-                // if (!result.user.emailVerified) {
 
-                //     setLoginError('Please verify your email address');
-             
-
+               
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "Successfully Logged in",
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+                   
                     setUser(result.user);
-
-                    // console.log(user);
-                    // console.log('Hello..Target Path', targetPath)
 
                     navigate(targetPath);
                     e.target.reset();
@@ -82,6 +84,14 @@ const Login = () => {
             .then(result => {
             //  console.log(result.user.email);
                 //  navigate('/');
+
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Successfully Logged in",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                  navigate(targetPath);
 
                 setLoginError('');
