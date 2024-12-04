@@ -9,6 +9,8 @@ import {
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Root from './components/Root.jsx';
 import MainLayout from './components/layoutComponent/MainLayout.jsx';
+import AuthProvider from './components/providers/AuthProvider.jsx';
+import Login from './components/Login.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,10 +49,10 @@ const router = createBrowserRouter([
     ]
 
   },
-  // {
-  //   path:'/login',
-  //   element: <Login></Login>
-  // },
+  {
+    path:'/login',
+    element: <Login></Login>
+  },
   // {
   //   path:'/reset-password',
   //   element: <UpdatePassword></UpdatePassword>
@@ -70,8 +72,11 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
   <HelmetProvider>
 
-  
-      <RouterProvider router={router} />
+
+
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
  
 
   </HelmetProvider>

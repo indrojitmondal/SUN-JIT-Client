@@ -64,8 +64,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end flex items-center gap-5">
-          <a className=" text-yellow-300">Login</a>
-          <a className=" text-yellow-300">Register</a>
+       
+          <Link to={'/login'}   className='text-yellow-300'>Login</Link>
+          <Link  className='text-yellow-300'>Register</Link>
         </div>
       </div>
     );
