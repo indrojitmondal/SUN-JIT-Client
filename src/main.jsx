@@ -30,20 +30,20 @@ const router = createBrowserRouter([
         element :  <MainLayout></MainLayout>
       },
       {
-        path: '/all-review',
+        path: '/reviews',
         element: <AllReview></AllReview>
       },
      
       {
-        path: '/add-review',
+        path: '/addReview',
         element : <PrivateRoute> <AddReviews></AddReviews>  </PrivateRoute> 
       },
       {
-        path: '/my-review',
+        path: '/myReviews',
         element : <PrivateRoute> <MyReview></MyReview>  </PrivateRoute> 
       },
       {
-        path: '/game-watch-list',
+        path: '/myWatchlist',
         element : <PrivateRoute> <GameWatchList></GameWatchList>  </PrivateRoute> 
       },
      
@@ -99,3 +99,5 @@ createRoot(document.getElementById('root')).render(
 
   </StrictMode>
 )
+
+

@@ -8,15 +8,15 @@ const Navbar = () => {
   // console.log(user.photoURL);
   const links = <div className='flex flex-col md:flex-row items-center text-lg gap-5'>
     <NavLink to={'/'}>Home</NavLink>
-    <NavLink to={'/all-review'}>All Reviews</NavLink>
+    <NavLink to={'/reviews'}>All Reviews</NavLink>
     {
-     <NavLink to={'/add-review'}>Add Review</NavLink>
+     <NavLink to={'/addReview'}>Add Review</NavLink>
     }
     {
-     <NavLink to={'/my-review'}>My Reviews</NavLink>
+     <NavLink to={'/myReviews'}>My Reviews</NavLink>
     }
     {
-       <NavLink to={'/game-watch-list'}>Game WatchList </NavLink>
+       <NavLink to={'/myWatchlist'}>Game WatchList </NavLink>
     }
 
 

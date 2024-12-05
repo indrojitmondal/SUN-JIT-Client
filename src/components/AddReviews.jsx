@@ -3,14 +3,15 @@ import { AuthContext } from './providers/AuthProvider';
 import Swal from 'sweetalert2';
 
 const AddReviews = () => {
-    const {user}= useContext(AuthContext);
-    // console.log(user.email);
+    const { user } = useContext(AuthContext);
     const [selectedGenre, setSelectedGenre] = useState("");
+    const [loading, setLoading] = useState(false); // New loading state
 
     const handleChange = (event) => {
-      setSelectedGenre(event.target.value); // Update state with selected value
+        setSelectedGenre(event.target.value); // Update state with selected value
     };
-    const handleSubmit = (event)=>{
+
+    const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const game_url = event.target.game_url.value;
@@ -18,42 +19,58 @@ const AddReviews = () => {
         const game_description = event.target.game_description.value;
         const rating = event.target.rating.value;
         const publication_year = event.target.publication_year.value;
-        
-        console.log("From submit:",game_url, game_title, game_description, rating, publication_year, selectedGenre);
-        
-        const newReview= {game_url, game_title, game_description, rating, publication_year}
+
+        console.log("From submit:", game_url, game_title, game_description, rating, publication_year, selectedGenre);
+
+        const newReview = { game_url, game_title, game_description, rating, publication_year };
         console.log(newReview);
-        fetch('https://sunjit-server.vercel.app/reviews',{
+
+        // Start loading
+        setLoading(true);
+
+        fetch('https://sunjit-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
-                'content-type':'application/json'
-               
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newReview)
-
         })
-        .then(res=> res.json())
-        .then(data=> {
-            console.log('Data from API:',data);
-            if (data.insertedId) {
+            .then(res => res.json())
+            .then(data => {
+                console.log('Data from API:', data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Review Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                console.error("Error adding review:", error);
                 Swal.fire({
-                    title: 'Success',
-                    text: 'Review Added Successfully',
-                    icon: 'success',
+                    title: 'Error',
+                    text: 'There was an error adding the review. Please try again.',
+                    icon: 'error',
                     confirmButtonText: 'OK'
-                })
-                form.reset();
-            }
-        });
-    }
+                });
+            })
+            .finally(() => {
+                // Stop loading after request is finished
+                setLoading(false);
+            });
+    };
+
     return (
-        <div >
+        <div>
             <h2 className='text-2xl font-bold text-center pt-4 text-header_bg'>Add New Review</h2>
 
             <div className=" bg-base-200 lg:w-1/2 mx-auto ">
                 <div className="hero-content ">
 
-                    <div className=" w-full  shrink-0 shadow-2xl">
+                    <div className=" w-full shrink-0 shadow-2xl">
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -72,7 +89,6 @@ const AddReviews = () => {
                                     <span className="label-text font-bold">Review Description</span>
                                 </label>
                                 <textarea placeholder="description" name='game_description' className="input input-bordered h-[100px]" />
-
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -106,19 +122,13 @@ const AddReviews = () => {
                                 <label className="label">
                                     <span className="label-text font-bold">Genres</span>
                                 </label>
-                                <select className="select input input-bordered  w-full  "  
-                                    // value={selectedGenre} 
-                                  onChange={handleChange}
-                                 >
-                                    {/* <option disabled selected>Size</option> */}
-                                   
+                                <select className="select input input-bordered  w-full"
+                                    onChange={handleChange}>
                                     <option>Action</option>
                                     <option>RPG</option>
                                     <option>Adventure</option>
                                     <option>Puzzle</option>
                                     <option>Simulation</option>
-                                    
-                                   
                                 </select>
                             </div>
                             <div className="form-control">
@@ -147,7 +157,9 @@ const AddReviews = () => {
                             </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary bg-header_bg">Submit</button>
+                                <button className="btn btn-primary bg-header_bg" disabled={loading}>
+                                    {loading ? "Submitting..." : "Submit"}
+                                </button>
                             </div>
                         </form>
                     </div>
