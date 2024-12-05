@@ -33,7 +33,9 @@ const Navbar = () => {
 
   </div>
   return (
-    <div className="navbar py-5 bg-header_bg  text-white">
+    
+    <div>
+          <div className="navbar py-5 bg-header_bg  text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -104,37 +106,13 @@ const Navbar = () => {
       </h1>
          </div>
         }
+
+
      
 
       </div>
      
-      {
-        path=='/' &&
-      
-      <div className='App  md:hidden '>
-      {/* <h1 style={{ paddingTop: '1rem', margin: 'auto 0', fontWeight: 'normal' }}>
-        */}
-        <h1 className='pt-4 font-normal text-orange-400'>
-         
-        By SUN@JIT, you can {' '} 
-        <span style={{ color: 'red', fontWeight: 'bold' }}>
-          {/* Style will be inherited from the parent element */}
-          <Typewriter
-            words={['add review', 'see review', 'see watchList']}
-            loop={7}
-            cursor
-            cursorStyle='_'
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-            // onLoopDone={handleDone}
-            // onType={handleType}
-          />
-        </span>
-        game
-      </h1>
-      </div>
-      }
+   
 
 
 
@@ -162,7 +140,40 @@ const Navbar = () => {
       }
 
 
+
+
     </div>
+
+    {
+        path=='/' &&
+      
+      <div className='App bg-header_bg md:hidden '>
+      {/* <h1 style={{ paddingTop: '1rem', margin: 'auto 0', fontWeight: 'normal' }}>
+        */}
+        <h1 className='py-2 text-center font-normal text-orange-400'>
+         
+        By SUN@JIT, you can {' '} 
+        <span style={{ color: 'red', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={['add review', 'see review', 'see watchList']}
+            loop={7}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+        game
+      </h1>
+      </div>
+      }
+
+    </div>
+
   );
 };
 
