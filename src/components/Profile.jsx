@@ -33,18 +33,23 @@ const Profile = () => {
 
 
 
-                <div className="avatar">
-                    <div className="w-14 h-14  rounded-full">
-                        <img className='' title={user.displayName} src={user.photoURL} />
+                {/* <div className="">
+                    <div className="w-14 h-14 avatar tooltip rounded-full" data-tip={user.displayName}>
+                        <img className='' src={user.photoURL} />
                     </div>
-
-                    {/* <div className="tooltip w-12 h-12 " data-tip='Hello'>
-                    <img className=''  src={user.photoURL} />
-                        
-                    
-                    </div> */}
-                    
-
+                
+                </div> */}
+                <div className="">
+                    <div
+                        className="w-14 h-14 avatar tooltip rounded-full border-2 border-gray-200"
+                        data-tip={user.displayName }
+                    >
+                        <img
+                            className="rounded-full"
+                            src={user.photoURL }
+                            alt="User Avatar"
+                        />
+                    </div>
                 </div>
 
                 {/* <div className='hidden md:block'>

@@ -83,6 +83,19 @@ const AddReviews = () => {
                                     className="input input-bordered"
                                     value={user.email}
                                     readOnly
+                                    disabled
+                                />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text font-bold">User Name</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    className="input  input-bordered"
+                                    value={user.displayName}
+                                    readOnly
+                                    disabled
                                 />
                             </div>
 
