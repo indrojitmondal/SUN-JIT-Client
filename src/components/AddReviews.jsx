@@ -20,10 +20,10 @@ const AddReviews = () => {
         const rating = event.target.rating.value;
         const publication_year = event.target.publication_year.value;
 
-        console.log("From submit:", game_url, game_title, game_description, rating, publication_year, selectedGenre);
+        // console.log("From submit:", game_url, game_title, game_description, rating, publication_year, selectedGenre);
 
         const newReview = { game_url, game_title, game_description, rating, publication_year };
-        console.log(newReview);
+       // console.log(newReview);
 
         // Start loading
         setLoading(true);

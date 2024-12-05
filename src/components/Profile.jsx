@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from './firebase/firebase.init';
 import { AuthContext } from './providers/AuthProvider';
@@ -9,7 +9,7 @@ import { AuthContext } from './providers/AuthProvider';
 
 const Profile = () => {
     const { user, setUser, targetPath, setTargetPath } = useContext(AuthContext);
-
+    const navigate = useNavigate();
     // console.log("User:", user.photoURL);
     const location = useLocation();
     const path = location.pathname;
@@ -19,7 +19,8 @@ const Profile = () => {
 
             setUser('');
             setTargetPath('/');
-            <Navigate to={'/'}></Navigate>
+            navigate('/');
+            // <Navigate to={'/'}></Navigate>
             // Sign-out successful.
         }).catch((error) => {
             // An error happened.
