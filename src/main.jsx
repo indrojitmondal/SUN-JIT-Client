@@ -17,6 +17,7 @@ import AddReviews from './components/AddReviews.jsx';
 import MyReview from './components/MyReview.jsx';
 import GameWatchList from './components/GameWatchList.jsx';
 import AllReview from './components/AllReview.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -76,10 +77,10 @@ const router = createBrowserRouter([
     path:'/register',
     element: <Register></Register>
   },
-  // {
-  //   path: '*',
-  //   element : <ErrorPage></ErrorPage>
-  // },
+  {
+    path: '*',
+    element : <ErrorPage></ErrorPage>
+  },
   
 ]);
 
