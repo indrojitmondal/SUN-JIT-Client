@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from './providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddReviews = () => {
     const {user}= useContext(AuthContext);
@@ -11,7 +12,39 @@ const AddReviews = () => {
     };
     const handleSubmit = (event)=>{
         event.preventDefault();
-        console.log("Selected Genre:", selectedGenre);
+        const form = event.target;
+        const game_url = event.target.game_url.value;
+        const game_title = event.target.game_title.value;
+        const game_description = event.target.game_description.value;
+        const rating = event.target.rating.value;
+        const publication_year = event.target.publication_year.value;
+        
+        console.log("From submit:",game_url, game_title, game_description, rating, publication_year, selectedGenre);
+        
+        const newReview= {game_url, game_title, game_description, rating, publication_year}
+        console.log(newReview);
+        fetch('http://localhost:5000/reviews',{
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+               
+            },
+            body: JSON.stringify(newReview)
+
+        })
+        .then(res=> res.json())
+        .then(data=> {
+            console.log('Data from API:',data);
+            if (data.insertedId) {
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Review Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                })
+                form.reset();
+            }
+        });
     }
     return (
         <div >
@@ -60,7 +93,7 @@ const AddReviews = () => {
                                 </label>
                                 <input
                                     type="number"
-                                    name='publication_date'
+                                    name='publication_year'
                                     placeholder="Enter year (e.g., 2021, 2024)"
                                     className="input input-bordered"
                                     min="1900"

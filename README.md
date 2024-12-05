@@ -1,6 +1,6 @@
 # SUN@JIT
 
- ![PAIKGACA Screenshot](https://github.com/programming-hero-web-course1/b10-a9-authentication-indrojitmondal/blob/main/src/assets/screenshot/1.png)
+ ![PAIKGACA Screenshot](https://github.com/programming-hero-web-course2/b10-a10-client-side-indrojitmondal/blob/main/src/assets/screenshot/1.png)
 
 ## Table of Contents
 - [Purpose](#purpose)
@@ -9,20 +9,24 @@
 - [NPM Packages used in this project](#npm-packages-used-in-the-project)
 
 ## Purpose
-Paikgaca is online coupon collection application.Using this application users can view few advertisement of various e-commerce applications. By the help of our application customers can see coupons and purchase their desired products.  
+SUN@JIT is a game review application by which users can explore and share game reviews. 
 
 ## Live URL
-<a href='https://paikgacha-336df.web.app/' target='_blank'>Visit Site </a>
+<a href='https://sunjit-98781.web.app/' target='_blank'>Visit Site </a>
 
 ## Key Features
-Here are the top 4 key features of PAIKGACA:
+Here are the top key features of SAN@JIT:
 1. **Authentication**:
-   - To view coupon codes, users have must to login, Otherwise they will not see the main features.We included here forget password system so that user can login further if they forget password.
-2. **Brands**:
+   - To see review, users must need to login, Otherwise they will not see the main features.
+2. **All Reviews**:
    - We include two categories brands thats are top brands and brands on sell. In the home page user can see brand details to clicking on the logo and In brands page we includes a search bar for searching brands. 
-3. **Service Process and Contact Section**: 
+3. **Add Reviews**: 
    - We described our services process in Our Services section and included a contact form so that users can send their messages to us.
-4. **My-Profile**
+4. **My-Reviews**
+   - After successfully login user can their profile and update.
+5. **Game Watch list**
+   - After successfully login user can their profile and update.
+5. **Highest Rated Game List**
    - After successfully login user can their profile and update.
 
 ## NPM Packages used in this project
@@ -40,8 +44,8 @@ Here are few npm packages I have used in this project:
 Here are some screenshots of the PAIKGACA:
 
 1. **Homepage**:
-   ![Homepage Screenshot](https://github.com/programming-hero-web-course1/b10-a9-authentication-indrojitmondal/blob/main/src/assets/screenshot/1.png)
-   *The homepage displays a logo, navbar, banner, top brans, brands on sell, services process and contact section*
+   ![Homepage Screenshot](https://github.com/programming-hero-web-course2/b10-a10-client-side-indrojitmondal/blob/main/src/assets/screenshot/1.png)
+   *The homepage displays a logo, navbar, banner, type of games, highest rated game review and contact section*
 
 2. **Brands Page**:
    ![Brand Section Screenshot](https://github.com/programming-hero-web-course1/b10-a9-authentication-indrojitmondal/blob/main/src/assets/screenshot/2.png)
