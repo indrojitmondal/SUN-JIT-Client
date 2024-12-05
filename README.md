@@ -37,8 +37,7 @@ Here are few npm packages I have used in this project:
 4. **Reactjs-Social-Login**
 5. **React-Toastify**
 6. **React-Animated-css**
-6. **React-Wavify**
-6. **React-Copy-to-Clipboard**
+7. **React-Copy-to-Clipboard**
 
 ## Screenshots
 Here are some screenshots of the PAIKGACA:

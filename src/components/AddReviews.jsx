@@ -23,7 +23,7 @@ const AddReviews = () => {
         
         const newReview= {game_url, game_title, game_description, rating, publication_year}
         console.log(newReview);
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://sunjit-server.vercel.app/reviews',{
             method: 'POST',
             headers: {
                 'content-type':'application/json'
