@@ -15,7 +15,7 @@ SUN@JIT is a game review application by which users can explore and share game r
 <a href='https://sunjit-98781.web.app/' target='_blank'>Visit Site </a>
 
 ## Key Features
-- [Authentication](#):
+- [Authentication]:
     -*To see review, users must need to login, Otherwise they will not see the main features.*
 - [All Reviews](#):
     -*This section will show*
