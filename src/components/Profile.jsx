@@ -10,7 +10,7 @@ import { AuthContext } from './providers/AuthProvider';
 const Profile = () => {
     const { user, setUser, targetPath, setTargetPath } = useContext(AuthContext);
 
-    console.log("User:", user.photoURL);
+    // console.log("User:", user.photoURL);
     const location = useLocation();
     const path = location.pathname;
     const handleLogOut = () => {
