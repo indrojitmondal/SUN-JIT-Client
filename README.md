@@ -17,15 +17,15 @@ SUN@JIT is a game review application by which users can explore and share game r
 ## Key Features
 - [Authentication](#)
     -*To see review, users must need to login, Otherwise they will not see the main features.*
-- [All Reviews]
+- [All Reviews](#)
    *This section will show*
-- [Add Reviews] 
+- [Add Reviews](#) 
     *In this section Users can see some input field like game cover image url, game title, description, rating, publication year, game genres and a submit button. After submitting the form the data will be stored in database and will give a success sweet alert.*
-- [My Reviews]
+- [My Reviews](#)
    *After successfully login user can their profile and update.*
-- [Game-Watch-list]
+- [Game-Watch-list](#)
    *After successfully login user can their profile and update.*
-- [Highest-Rated-Game-List]
+- [Highest-Rated-Game-List](#)
    *After successfully login user can their profile and update.*
 
 ## NPM Packages used in this project
