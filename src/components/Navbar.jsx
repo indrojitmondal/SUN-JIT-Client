@@ -1,10 +1,21 @@
 import React, { useContext } from 'react';
 import { CgMenu } from "react-icons/cg";
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AuthContext } from './providers/AuthProvider';
 import Profile from './Profile';
+import { Typewriter } from 'react-simple-typewriter';
 const Navbar = () => {
   const { user } = useContext(AuthContext);
+  const location = useLocation();
+  const path = location.pathname;
+  // const handleType = (count: number) => {
+  //   // access word count number
+  //   console.log(count)}
+  // }
+
+  // const handleDone = () => {
+  //   console.log(`Done after 5 loops!`)
+  // }
   // console.log(user.photoURL);
   const links = <div className='flex flex-col md:flex-row items-center text-lg gap-5'>
     <NavLink to={'/'}>Home</NavLink>
@@ -69,17 +80,61 @@ const Navbar = () => {
           <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
         </div> */}
 
+        {path=='/' &&
+         <div className='App'>
+     
+        <h1 className='pt-4 font-normal text-orange-400'>
+        
+        By SUN@JIT, you can {' '} 
+        <span style={{ color: 'red', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={['add review', 'see review', 'see watchList']}
+            loop={7}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+        game
+      </h1>
+         </div>
+        }
      
 
       </div>
-      {/* <div className="navbar-center md:hidden  ">
-        
-
-        <div className="form-control">
-          <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-        </div>
-
-      </div> */}
+     
+      {
+        path=='/' &&
+      
+      <div className='App  md:hidden '>
+      {/* <h1 style={{ paddingTop: '1rem', margin: 'auto 0', fontWeight: 'normal' }}>
+        */}
+        <h1 className='pt-4 font-normal text-orange-400'>
+         
+        By SUN@JIT, you can {' '} 
+        <span style={{ color: 'red', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={['add review', 'see review', 'see watchList']}
+            loop={7}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+        game
+      </h1>
+      </div>
+      }
 
 
 
