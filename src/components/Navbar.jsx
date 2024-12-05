@@ -5,6 +5,7 @@ import { AuthContext } from './providers/AuthProvider';
 import Profile from './Profile';
 const Navbar = () => {
   const { user } = useContext(AuthContext);
+  // console.log(user.photoURL);
   const links = <div className='flex flex-col md:flex-row items-center text-lg gap-5'>
     <NavLink to={'/'}>Home</NavLink>
     <NavLink to={'/all-review'}>All Reviews</NavLink>
@@ -64,21 +65,21 @@ const Navbar = () => {
           {links}
         </ul>
 
-        <div className="form-control mt-2">
+        {/* <div className="form-control mt-2">
           <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-        </div>
+        </div> */}
 
      
 
       </div>
-      <div className="navbar-center md:hidden  ">
+      {/* <div className="navbar-center md:hidden  ">
         
 
         <div className="form-control">
           <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
         </div>
 
-      </div>
+      </div> */}
 
 
 
