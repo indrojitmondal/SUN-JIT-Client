@@ -47,7 +47,7 @@ const Profile = () => {
                         <img
                             className="rounded-full"
                             src={user.photoURL }
-                            alt="User Avatar"
+                            alt="UserAvatar"
                         />
                     </div>
                 </div>
