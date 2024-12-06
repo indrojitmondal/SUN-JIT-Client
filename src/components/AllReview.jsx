@@ -6,8 +6,11 @@ import 'react-dropdown/style.css';
 
 const AllReview = () => {
     const allReviewLoaded = useLoaderData();
+    console.log('AllReviewLoaded: ', allReviewLoaded);
     const [allReview, setAllReview]= useState(allReviewLoaded)
-
+     
+    const options1 = ['Action','RPG', 'Adventure','Puzzle','Simulation'];
+    const defaultOption1 = options1[0];
     const options = ['Rating','Year'];
     
     const defaultOption = options[0];
@@ -21,6 +24,18 @@ const AllReview = () => {
    
 
     // Function to handle dropdown selection
+    
+    const handleSelect1 = (selectedOption) => {
+        console.log('Selected:', selectedOption.value);
+         // Logs the selected option
+         const option= selectedOption.value;
+        console.log('Genre Type:', option);
+        const filterData= allReviewLoaded.filter(review=> review.genres===option);
+        setAllReview(filterData);
+        
+    };
+   
+
     const handleSelect = (selectedOption) => {
         console.log('Selected:', selectedOption.value);
          // Logs the selected option
@@ -49,8 +64,22 @@ const AllReview = () => {
     return (
         <div className="w-11/12 lg:w-10/12 mx-auto pt-5">
             {/* Dropdown */}
+            
             <div className='flex items-center'>
-            <h2 className='text-xl font-bold'>Sort by</h2>
+            <h2 className='text-xl font-bold'>Genre Type</h2>
+            
+            <Dropdown className='w-1/2 py-4 mx-auto'
+                options={options1}
+                onChange={handleSelect1}
+                value={defaultOption1}
+                placeholder="Select an option"
+            />
+            </div>
+
+
+            <div className='flex items-center'>
+            <h2 className='text-lg font-bold'>Sort by</h2>
+            
             <Dropdown className='w-1/2 py-4 mx-auto'
                 options={options}
                 onChange={handleSelect}
