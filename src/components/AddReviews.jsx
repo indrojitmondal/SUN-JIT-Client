@@ -20,12 +20,13 @@ const AddReviews = () => {
         const rating = event.target.rating.value;
         const publication_year = event.target.publication_year.value;
         const genres = selectedGenre;
+        const name= user.displayName;
         const email = user.email;
         //console.log(email);
 
         // console.log("From submit:", game_url, game_title, game_description, rating, publication_year, selectedGenre);
 
-        const newReview = { game_url, game_title, game_description, rating, publication_year, genres, email };
+        const newReview = { game_url, game_title, game_description, rating, publication_year, genres, name, email };
         //console.log(newReview);
 
         // Start loading

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllReviewCard = ({review}) => {
     const {_id, game_url,game_title,rating,publication_year}=review;
@@ -17,13 +18,13 @@ const AllReviewCard = ({review}) => {
             <div>
                 
 
-                <button  className='btn'>
+                <Link to={`/review/${_id}`}    className='btn'>
 
                     <h2>Explore Details</h2>
 
                     
 
-                </button>
+                </Link>
 
             </div>
 
