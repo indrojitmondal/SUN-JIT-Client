@@ -42,7 +42,7 @@ const AddReviews = () => {
                 console.log('Data from API:', data);
                 if (data.insertedId) {
                     Swal.fire({
-                        title: 'Success',
+                        title: 'Submitted',
                         text: 'Review Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'OK'
