@@ -45,11 +45,7 @@ Here are some screenshots of the PAIKGACA:
    ![Homepage Screenshot](https://github.com/programming-hero-web-course2/b10-a10-client-side-indrojitmondal/blob/main/src/assets/screenshot/1.png)
    *The homepage displays a logo, navbar, banner, type of games, highest rated game review and contact section*
 
-2. **Brands Page**:
-   ![Brand Section Screenshot](https://github.com/programming-hero-web-course1/b10-a9-authentication-indrojitmondal/blob/main/src/assets/screenshot/2.png)
-   *This section shows a search bar, brand name, brand logo, rating, selling status and a view coupon button.*
-
-3. **Add Review Section**:
+2. **Add Review Section**:
    ![My Profile Screenshot](https://github.com/programming-hero-web-course2/b10-a10-client-side-indrojitmondal/blob/main/src/assets/screenshot/2.png)
    *Add Review shows some input field and a submit button.*
 
