@@ -7,7 +7,7 @@ const UpdateReview = () => {
     const { user } = useContext(AuthContext);
     const preData= useLoaderData();
     console.log('PreData from UpdateReview: ',preData);
-    const { game_url, game_title, game_description, rating, publication_year, genres, email}=preData;
+    const {_id, game_url, game_title, game_description, rating, publication_year, genres, email}=preData;
         
     const [selectedGenre, setSelectedGenre] = useState("");
     const [loading, setLoading] = useState(false); // New loading state
@@ -36,8 +36,8 @@ const UpdateReview = () => {
         // Start loading
         setLoading(true);
 
-        fetch('https://sunjit-server.vercel.app/reviews', {
-            method: 'POST',
+        fetch(`https://sunjit-server.vercel.app/reviews/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -46,7 +46,7 @@ const UpdateReview = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('Data from API:', data);
-                if (data.insertedId) {
+                if (data.modifiedCount>0) {
                     Swal.fire({
                         title: 'Updated',
                         text: 'Your review has been updated successfully',
