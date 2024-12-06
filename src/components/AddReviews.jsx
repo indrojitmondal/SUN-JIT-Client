@@ -19,13 +19,13 @@ const AddReviews = () => {
         const game_description = event.target.game_description.value;
         const rating = event.target.rating.value;
         const publication_year = event.target.publication_year.value;
-        const genres= selectedGenre;
-        const email= user.email;
+        const genres = selectedGenre;
+        const email = user.email;
         //console.log(email);
 
         // console.log("From submit:", game_url, game_title, game_description, rating, publication_year, selectedGenre);
 
-        const newReview = { game_url, game_title, game_description, rating, publication_year,genres, email};
+        const newReview = { game_url, game_title, game_description, rating, publication_year, genres, email };
         //console.log(newReview);
 
         // Start loading
@@ -79,19 +79,19 @@ const AddReviews = () => {
                                 <label className="label">
                                     <span className="label-text font-bold">Game Cover Image</span>
                                 </label>
-                                <input type="text" name='game_url' placeholder="url" className="input input-bordered" />
+                                <input type="text" name='game_url' placeholder="url" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Game Title</span>
                                 </label>
-                                <input type="text" name='game_title' placeholder="title" className="input input-bordered" />
+                                <input type="text" name='game_title' placeholder="title" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Review Description</span>
                                 </label>
-                                <textarea placeholder="description" name='game_description' className="input input-bordered h-[100px]" />
+                                <textarea placeholder="description" name='game_description' className="input input-bordered h-[100px]" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -104,6 +104,7 @@ const AddReviews = () => {
                                     className="input input-bordered"
                                     min="1"
                                     max="5"
+                                    required
                                 />
                             </div>
                             <div className="form-control">
@@ -118,15 +119,36 @@ const AddReviews = () => {
                                     min="1900"
                                     max="2100"
                                     step="1"
+                                    required
                                 />
                             </div>
 
-                            <div className="form-control">
+                            {/* <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Genres</span>
                                 </label>
                                 <select className="select input input-bordered  w-full"
-                                    onChange={handleChange}>
+                                    onChange={handleChange} 
+                                    required
+                                    >
+                                    <option>Action</option>
+                                    <option>RPG</option>
+                                    <option>Adventure</option>
+                                    <option>Puzzle</option>
+                                    <option>Simulation</option>
+                                    
+                                </select>
+                            </div> */}
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text font-bold">Genres</span>
+                                </label>
+                                <select
+                                    className="select input input-bordered w-full"
+                                    onChange={handleChange}
+                                    required
+                                >
+                                    <option value="" disabled selected>Select a Genre</option>
                                     <option>Action</option>
                                     <option>RPG</option>
                                     <option>Adventure</option>
