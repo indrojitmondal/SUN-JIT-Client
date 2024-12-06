@@ -6,3 +6,23 @@
 a.active {
     color: orange;
 }
+
+/* body[data-theme='dark'] {
+    background-color: #121212;
+    color: white;
+  } */
+  body[data-theme='dark']{
+    background-color: #121212;
+    color: white;
+  }
+  
+  /* body[data-theme='light'] {
+    background-color: white;
+    color: black;
+  } */
+
+  body[data-theme='light']{
+    background-color: white;
+    color: black;
+  }
+  

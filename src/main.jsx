@@ -26,7 +26,6 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
      
-     
       {
         path: '',
         element :  <MainLayout></MainLayout>
@@ -66,21 +65,7 @@ const router = createBrowserRouter([
         loader: ({params})=> fetch(`https://sunjit-server.vercel.app/reviews/${params.id}`)
         
       }
-     
-
-      // {
-      //   path: '/brands',
-      //   element :  <Brands></Brands> 
-      // },
-      // {
-      //   path: '/about-dev',
-      //   element : <AboutDev></AboutDev>
-      // },
-      // {
-      //   path: '/brand/:id',
-      //   element : <PrivateRoute> <BrandDetails></BrandDetails> </PrivateRoute> ,
-      //   loader : ()=> fetch('/coupons.json')
-      // }
+    
 
     ]
 

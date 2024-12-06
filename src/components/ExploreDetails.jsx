@@ -9,16 +9,26 @@ const ExploreDetails = () => {
     //console.log('Data from Explore Details: ', loadedData);
     return (
         <div className='w-11/12 lg:w-11/12 mx-auto'>
-            <h2 className='text-xl text-center py-4 font-bold'>Review Details</h2>
+            <h2 className='text-2xl text-center py-4 font-bold'>Review Details</h2>
             <div className='flex justify-center'>
                 <div className=''>
                     <img src={game_url} alt={game_title} />
-                    <h2>Title: {game_title} </h2>
-                    <p>Review description: {game_description} </p>
-                    <h2>Rating: {rating} </h2>
-                    <h2>Genre: {genres}</h2>
-                    <h2>Reviewer's name: {name} </h2>
-                    <h2>Reviewer's email: {email}</h2>
+                    <div className='pt-4'>
+                        <h2  > <span className='text-lg font-bold'>Title: </span> {game_title} </h2>
+                        <p > <span className='text-lg font-bold' >Review description: </span>  {game_description} </p>
+                        <h2> <span className='text-lg font-bold'>Rating: </span>  {rating} </h2>
+                        <h2><span className='text-lg font-bold'>Genre: </span>  {genres}</h2>
+                        <h2><span className='text-lg font-bold'>Reviewer's name: </span>  {name} </h2>
+                        <h2><span className='text-lg font-bold'>Reviewer's email: </span>  {email}</h2>
+
+                    </div>
+                    <div className='flex justify-center'> 
+
+                    <button className='btn  '>Add to WatchList"</button>
+                
+
+                    </div>
+                    
                 </div>
             </div>
         </div>
