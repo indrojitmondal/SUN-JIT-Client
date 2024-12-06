@@ -25,11 +25,13 @@ const MyReview = () => {
         <div className='w-11/12 lg:w-10/12 mx-auto pt-5'>
             {/* <h2>Hello from MyReview</h2>
             <h2>My total reviews: {myReviews.length} </h2> */}
+           { myReviews.length>0 &&
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                    myReviews?.map((review, idx)=> <ReviewCard key={idx} review={review} ></ReviewCard> ) 
                 }
             </div>
+            }
         </div>
     );
 };

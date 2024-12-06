@@ -17,7 +17,7 @@ const AuthProvider = ({children}) => {
     const [imageUrl, setImageUrl] = useState('');
     const [targetPath, setTargetPath]= useState('/');
     const [resetEmail, setResetEmail]= useState('');
-    const [myReviews, setMyReviews]=useState(null);
+    const [myReviews, setMyReviews]=useState([]);
 
    
 
