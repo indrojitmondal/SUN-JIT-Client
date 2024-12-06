@@ -18,7 +18,7 @@ const ReviewCard = ({review}) => {
             </div>
             {/* Right */}
             <div>
-                <Link className='flex items-center'>
+                <Link to={`/updateReview/${_id}`} className='flex items-center'>
 
                     <h2>Update</h2>
 

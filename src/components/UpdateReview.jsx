@@ -1,9 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from './providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { useLoaderData } from 'react-router-dom';
 
-const AddReviews = () => {
+const UpdateReview = () => {
     const { user } = useContext(AuthContext);
+    const preData= useLoaderData();
+    console.log('PreData from UpdateReview: ',preData);
+    const { game_url, game_title, game_description, rating, publication_year, genres, email}=preData;
+        
     const [selectedGenre, setSelectedGenre] = useState("");
     const [loading, setLoading] = useState(false); // New loading state
 
@@ -25,7 +30,7 @@ const AddReviews = () => {
 
         // console.log("From submit:", game_url, game_title, game_description, rating, publication_year, selectedGenre);
 
-        const newReview = { game_url, game_title, game_description, rating, publication_year,genres, email};
+        const newReview = { game_url, game_title, game_description, rating, publication_year, genres, email};
         //console.log(newReview);
 
         // Start loading
@@ -43,8 +48,8 @@ const AddReviews = () => {
                 console.log('Data from API:', data);
                 if (data.insertedId) {
                     Swal.fire({
-                        title: 'Submitted',
-                        text: 'Review Added Successfully',
+                        title: 'Updated',
+                        text: 'Your review has been updated successfully',
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
@@ -68,7 +73,7 @@ const AddReviews = () => {
 
     return (
         <div>
-            <h2 className='text-2xl font-bold text-center pt-4 text-header_bg'>Add New Review</h2>
+            <h2 className='text-2xl font-bold text-center pt-4 text-header_bg'>Update the Review</h2>
 
             <div className=" bg-base-200 lg:w-1/2 mx-auto ">
                 <div className="hero-content ">
@@ -79,19 +84,19 @@ const AddReviews = () => {
                                 <label className="label">
                                     <span className="label-text font-bold">Game Cover Image</span>
                                 </label>
-                                <input type="text" name='game_url' placeholder="url" className="input input-bordered" />
+                                <input type="text" name='game_url' defaultValue={game_url} placeholder="url" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Game Title</span>
                                 </label>
-                                <input type="text" name='game_title' placeholder="title" className="input input-bordered" />
+                                <input type="text" name='game_title' defaultValue={game_title}  placeholder="title" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Review Description</span>
                                 </label>
-                                <textarea placeholder="description" name='game_description' className="input input-bordered h-[100px]" />
+                                <textarea placeholder="description" name='game_description' defaultValue={game_description} className="input input-bordered h-[100px]" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -104,6 +109,7 @@ const AddReviews = () => {
                                     className="input input-bordered"
                                     min="1"
                                     max="5"
+                                    defaultValue={rating}
                                 />
                             </div>
                             <div className="form-control">
@@ -118,6 +124,7 @@ const AddReviews = () => {
                                     min="1900"
                                     max="2100"
                                     step="1"
+                                    defaultValue={publication_year}
                                 />
                             </div>
 
@@ -126,12 +133,16 @@ const AddReviews = () => {
                                     <span className="label-text font-bold">Genres</span>
                                 </label>
                                 <select className="select input input-bordered  w-full"
-                                    onChange={handleChange}>
+                                    onChange={handleChange}
+                                    defaultValue={genres}
+                                   
+                                    >
                                     <option>Action</option>
                                     <option>RPG</option>
                                     <option>Adventure</option>
                                     <option>Puzzle</option>
                                     <option>Simulation</option>
+                                    
                                 </select>
                             </div>
                             <div className="form-control">
@@ -161,7 +172,7 @@ const AddReviews = () => {
 
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary bg-header_bg" disabled={loading}>
-                                    {loading ? "Submitting..." : "Submit"}
+                                    {loading ? "Updating..." : "Update"}
                                 </button>
                             </div>
                         </form>
@@ -172,4 +183,4 @@ const AddReviews = () => {
     );
 };
 
-export default AddReviews;
+export default UpdateReview;

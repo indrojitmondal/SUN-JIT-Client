@@ -18,6 +18,7 @@ import MyReview from './components/MyReview.jsx';
 import GameWatchList from './components/GameWatchList.jsx';
 import AllReview from './components/AllReview.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
+import UpdateReview from './components/UpdateReview.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       {
         path: '/addReview',
         element : <PrivateRoute> <AddReviews></AddReviews>  </PrivateRoute> 
+     
       },
       {
         path: '/myReviews',
@@ -45,8 +47,15 @@ const router = createBrowserRouter([
         loader: ()=> fetch('https://sunjit-server.vercel.app/reviews')
       },
       {
+        path: '/updateReview/:id',
+        element : <PrivateRoute> <UpdateReview></UpdateReview>  </PrivateRoute>,
+        loader: ({params})=> fetch(`https://sunjit-server.vercel.app/reviews/${params.id}`) 
+        
+      },
+      {
         path: '/myWatchlist',
-        element : <PrivateRoute> <GameWatchList></GameWatchList>  </PrivateRoute> 
+        element : <PrivateRoute> <GameWatchList></GameWatchList>  </PrivateRoute> , 
+      
       },
      
 
