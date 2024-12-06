@@ -8,7 +8,8 @@ import { AuthContext } from './providers/AuthProvider';
 
 const ReviewCard = ({review}) => {
     const {_id, game_url,game_title,rating,publication_year}=review;
-     console.log('ID from ReviewCard: ', _id);
+     
+    console.log('ID from ReviewCard: ', _id);
      const {myReviews, setMyReviews} = useContext(AuthContext);
     
      const handleDelete = (id)=>{

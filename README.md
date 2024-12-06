@@ -16,30 +16,28 @@ SUN@JIT is a game review application by which users can explore and share game r
 
 ## Key Features
 - ### Authentication:
-    -To see review, users must need to login, Otherwise they will not see the main features.
+    -To add or see my review, users must need to login, Otherwise they will not see the main features.
 - ### All Reviews:
-    -This section will show
+    -User will see all reviews by users and explore details button.
 - ### Add Reviews: 
     -In this section Users can see some input field like game cover image url, game title, description, rating, publication year, game genres and a submit button. After submitting the form the data will be stored in database and will give a success sweet alert.
 - ### My Reviews:
-   -After successfully login user can their profile and update.
+   -In this section users can see his/her reviews.
 - ### Game-Watch-list:
-   -After successfully login user can their profile and update.
+   -Users can see the watch list.
 - ### Highest-Rated-Game-List:
-   -After successfully login user can their profile and update.
+   -Here, users can see the high rated game list.
 
 ## NPM Packages used in this project
 Here are few npm packages I have used in this project:
-1. **React-Rating-Starts-Component**
-2. **React-Helmet-Async**
-3. **React Fast Marquee**
-4. **Reactjs-Social-Login**
-5. **React-Toastify**
-6. **React-Animated-css**
-7. **React-Copy-to-Clipboard**
+1. **React-Helmet-Async**
+2. **Reactjs-Social-Login**
+3. **React-Sweet-Alert**
+4. **React-TypeWriter**
+
 
 ## Screenshots
-Here are some screenshots of the PAIKGACA:
+Here are some screenshots of the SUN@JIT:
 
 1. **Homepage**:
    ![Homepage Screenshot](https://github.com/programming-hero-web-course2/b10-a10-client-side-indrojitmondal/blob/main/src/assets/screenshot/1.png)

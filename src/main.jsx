@@ -32,7 +32,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/reviews',
-        element: <AllReview></AllReview>
+        element: <AllReview></AllReview>,
+        loader: ()=> fetch('https://sunjit-server.vercel.app/reviews')
+      
       },
      
       {
