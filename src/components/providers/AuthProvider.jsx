@@ -17,6 +17,7 @@ const AuthProvider = ({children}) => {
     const [imageUrl, setImageUrl] = useState('');
     const [targetPath, setTargetPath]= useState('/');
     const [resetEmail, setResetEmail]= useState('');
+    const [myReviews, setMyReviews]=useState(null);
 
    
 
@@ -76,6 +77,7 @@ const AuthProvider = ({children}) => {
         imageUrl, setImageUrl,
         targetPath, setTargetPath,
         resetEmail, setResetEmail,
+        myReviews, setMyReviews
     }
     return (
        <AuthContext.Provider value={authInfo}>

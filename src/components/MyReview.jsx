@@ -6,10 +6,12 @@ import ReviewCard from './ReviewCard';
 const MyReview = () => {
     const loadedReviews= useLoaderData();
     const {user}= useContext(AuthContext);
-    const [myReviews, setMyReviews]= useState(loadedReviews);
+    const {myReviews, setMyReviews} = useContext(AuthContext);
+    //const [myReviews, setMyReviews]= useState(loadedReviews);
     useEffect(()=>{
 
         const loadedData= loadedReviews;
+        //setMyReviews(loadedReviews);
         
         //console.log('Data from useEffect: ', loadedData);
        // console.log('Email from useEffect: ', user.email);
@@ -18,6 +20,7 @@ const MyReview = () => {
         setMyReviews(myData);
     },[])
     //const {game_url,game_title,rating,publication_year}= reviews;
+    console.log('My Total reviews: ',  myReviews.length);
     return (
         <div className='w-11/12 lg:w-10/12 mx-auto pt-5'>
             {/* <h2>Hello from MyReview</h2>
