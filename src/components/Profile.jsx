@@ -42,7 +42,7 @@ const Profile = () => {
                 </div> */}
                 <div className="">
                     <div
-                        className="w-14 h-14 avatar tooltip rounded-full border-2 border-gray-200"
+                        className="w-14 h-14  avatar tooltip rounded-full border-2 border-gray-200"
                         data-tip={user.displayName }
                     >
                         <img

@@ -19,11 +19,13 @@ const AddReviews = () => {
         const game_description = event.target.game_description.value;
         const rating = event.target.rating.value;
         const publication_year = event.target.publication_year.value;
+        const email= user.email;
+        console.log(email);
 
         // console.log("From submit:", game_url, game_title, game_description, rating, publication_year, selectedGenre);
 
-        const newReview = { game_url, game_title, game_description, rating, publication_year };
-       // console.log(newReview);
+        const newReview = { game_url, game_title, game_description, rating, publication_year, email};
+        console.log(newReview);
 
         // Start loading
         setLoading(true);
