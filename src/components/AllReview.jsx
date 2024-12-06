@@ -5,10 +5,21 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
 const AllReview = () => {
-    const allReviewLoaded = useLoaderData();
+    const [allReviewLoaded, setAllReviewLoaded]=useState([]); 
+
     console.log('AllReviewLoaded: ', allReviewLoaded);
     const [allReview, setAllReview]= useState(allReviewLoaded)
+    useEffect(()=>{
      
+        fetch('https://sunjit-server.vercel.app/reviews')
+        .then(res=>res.json())
+        .then(data=>{
+            console.log('Total data', data.length)
+           setAllReviewLoaded(data);
+           setAllReview(data);
+        })
+
+    },[])
     const options1 = ['Action','RPG', 'Adventure','Puzzle','Simulation'];
     const defaultOption1 = options1[0];
     const options = ['Rating','Year'];
@@ -20,7 +31,8 @@ const AllReview = () => {
     const compareByYear=(a,b)=>{
         return (b.publication_year) - (a.publication_year);
     }
-    const [sortStatus, setSortStatus]= useState(false);
+
+    const [listStatus, setListStatus]= useState(false);
    
 
     // Function to handle dropdown selection
@@ -40,7 +52,7 @@ const AllReview = () => {
         console.log('Selected:', selectedOption.value);
          // Logs the selected option
          const option= selectedOption.value;
-         setSortStatus(true);
+          //setListStatus(true);
          if(option=='Rating'){
            console.log('Data from handleSelect: ', allReview);
             
@@ -88,10 +100,19 @@ const AllReview = () => {
             />
             </div>
 
-            {/* Display Reviews */} 
+            {/* Display Reviews */}
+
+            {/* {
+                !listStatus &&  
+                <div className="grid md:grid-cols-2 mt-5 lg:grid-cols-3 gap-6">
+                    {allReviewLoaded?.map((review, idx) => (
+                        <AllReviewCard key={idx} review={review}></AllReviewCard>
+                    ))}
+                </div>
+            }  */}
            
             {allReview.length > 0 && (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-2 mt-5 lg:grid-cols-3 gap-4">
                     {allReview?.map((review, idx) => (
                         <AllReviewCard key={idx} review={review}></AllReviewCard>
                     ))}

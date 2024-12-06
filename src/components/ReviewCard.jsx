@@ -49,10 +49,10 @@ const ReviewCard = ({review}) => {
           });
     }
     return (
-        <div className='border p-4 border-gray-500 rounded-md flex gap-2 '>
+        <div className='border p-4 border-gray-500 rounded-md flex justify-between '>
             {/* left */}
             <div>
-                <img src={game_url} alt={game_title} />
+                <img src={game_url} className='w-full' alt={game_title} />
                 <h2>Title: {game_title} </h2>
                 <h2>Rating: {rating}</h2>
                 <h2>Publishing Year: {publication_year} </h2>
