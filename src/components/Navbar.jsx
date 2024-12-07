@@ -5,7 +5,7 @@ import { AuthContext } from './providers/AuthProvider';
 import Profile from './Profile';
 import { Typewriter } from 'react-simple-typewriter';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-
+import logo from '../assets/logo.png'
 const Navbar = () => {
   const { user } = useContext(AuthContext);
   const location = useLocation();
@@ -55,7 +55,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <img src="https://i.ibb.co.com/HCQbjMS/logo.png" className='w-16 h-16 md:w-40 md:h-36' alt="logo" />
+          <img src={logo} className='w-16 h-16 md:w-40 md:h-36' alt="logo" />
         </div>
         <div className="navbar-center hidden lg:flex lg:flex-col">
           <ul className="menu menu-horizontal px-1">

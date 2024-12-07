@@ -6,6 +6,7 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 import { updateProfile } from 'firebase/auth';
 
+
 import logo from '../assets/logo.png'
 import { auth } from './firebase/firebase.init';
 import { AuthContext } from './providers/AuthProvider';

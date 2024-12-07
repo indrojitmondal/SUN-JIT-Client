@@ -11,7 +11,7 @@ import { GoogleLoginButton } from "react-social-login-buttons";
 import { AuthContext } from './providers/AuthProvider';
 import Swal from 'sweetalert2';
 
-
+import logo from '../assets/logo.png'
 
 
 const Login = () => {
@@ -125,7 +125,7 @@ const Login = () => {
             <div className="hero-content flex-col ">
 
                 <Link to={'/'}  className='mx-auto'>
-                      <img   className='w-20 h-20 md:w-40 md:h-36' src='https://i.ibb.co.com/HCQbjMS/logo.png' alt="logo" />
+                      <img   className='w-20 h-20 md:w-40 md:h-36' src={logo} alt="logo" />
                 </Link>
                 <div className="text-center lg:text-left">
                     <h1 className="text-2xl text-white font-bold">Log in Now!</h1>
