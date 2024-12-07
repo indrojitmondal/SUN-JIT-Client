@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AllReviewCard = ({review}) => {
     const {_id, game_url,game_title,rating,publication_year}=review;
      
-    console.log('ID from AllReviewCard: ', _id);
+    //console.log('ID from AllReviewCard: ', _id);
     return (
         <div className='border p-4 border-gray-500 rounded-md  '>
             {/* left */}

@@ -6,10 +6,10 @@ import { useLoaderData } from 'react-router-dom';
 const UpdateReview = () => {
     const { user } = useContext(AuthContext);
     const preData= useLoaderData();
-    console.log('PreData from UpdateReview: ',preData);
+    //console.log('PreData from UpdateReview: ',preData);
     const {_id, game_url, game_title, game_description, rating, publication_year, genres, email}=preData;
         
-    const [selectedGenre, setSelectedGenre] = useState("");
+    const [selectedGenre, setSelectedGenre] = useState(genres);
     const [loading, setLoading] = useState(false); // New loading state
 
     const handleChange = (event) => {
@@ -26,12 +26,12 @@ const UpdateReview = () => {
         const publication_year = event.target.publication_year.value;
         const genres= selectedGenre;
         const email= user.email;
-        //console.log(email);
+        //console.log(genres);
 
         // console.log("From submit:", game_url, game_title, game_description, rating, publication_year, selectedGenre);
 
         const newReview = { game_url, game_title, game_description, rating, publication_year, genres, email};
-        //console.log(newReview);
+        //console.log("What is this",newReview);
 
         // Start loading
         setLoading(true);
@@ -45,7 +45,7 @@ const UpdateReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Data from API:', data);
+                //console.log('Data from API:', data);
                 if (data.modifiedCount>0) {
                     Swal.fire({
                         title: 'Updated',

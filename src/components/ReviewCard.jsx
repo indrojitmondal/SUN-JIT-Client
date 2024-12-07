@@ -9,11 +9,11 @@ import { AuthContext } from './providers/AuthProvider';
 const ReviewCard = ({review}) => {
     const {_id, game_url,game_title,rating,publication_year}=review;
      
-    console.log('ID from ReviewCard: ', _id);
+    //console.log('ID from ReviewCard: ', _id);
      const {myReviews, setMyReviews} = useContext(AuthContext);
     
      const handleDelete = (id)=>{
-        console.log(id);
+        //console.log(id);
         Swal.fire({
             title: "Are you sure?",
             text: "You want to delete this!",
@@ -30,8 +30,8 @@ const ReviewCard = ({review}) => {
                 })
                 .then(res=> res.json())
                 .then(data => {
-                    console.log(data);
-                    console.log('Deleted id: ',_id);
+                    //console.log(data);
+                   // console.log('Deleted id: ',_id);
                     if(data.deletedCount>0){
                         const remainingReviews= myReviews.filter(review=>review._id !==_id);
                         setMyReviews(remainingReviews);

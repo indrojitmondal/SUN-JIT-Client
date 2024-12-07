@@ -18,6 +18,7 @@ const ExploreDetails = () => {
                         <p > <span className='text-lg font-bold' >Review description: </span>  {game_description} </p>
                         <h2> <span className='text-lg font-bold'>Rating: </span>  {rating} </h2>
                         <h2><span className='text-lg font-bold'>Genre: </span>  {genres}</h2>
+                        <h2><span className='text-lg font-bold'>Publication-Year: </span>  {publication_year}</h2>
                         <h2><span className='text-lg font-bold'>Reviewer's name: </span>  {name} </h2>
                         <h2><span className='text-lg font-bold'>Reviewer's email: </span>  {email}</h2>
 

@@ -7,14 +7,15 @@ import 'react-dropdown/style.css';
 const AllReview = () => {
     const [allReviewLoaded, setAllReviewLoaded]=useState([]); 
 
-    console.log('AllReviewLoaded: ', allReviewLoaded);
+    //console.log('AllReviewLoaded: ', allReviewLoaded);
     const [allReview, setAllReview]= useState(allReviewLoaded)
+    
     useEffect(()=>{
      
         fetch('https://sunjit-server.vercel.app/reviews')
         .then(res=>res.json())
         .then(data=>{
-            console.log('Total data', data.length)
+            // console.log('Total data', data.length)
            setAllReviewLoaded(data);
            setAllReview(data);
         })
@@ -38,35 +39,39 @@ const AllReview = () => {
     // Function to handle dropdown selection
     
     const handleSelect1 = (selectedOption) => {
-        console.log('Selected:', selectedOption.value);
+        // console.log('Selected:', selectedOption.value);
          // Logs the selected option
          const option= selectedOption.value;
-        console.log('Genre Type:', option);
+        // console.log('Genre Type:', option);
+        // console.log('HelloAllLoadedData: ', allReviewLoaded);
+        
         const filterData= allReviewLoaded.filter(review=> review.genres===option);
+        // console.log('Hello..filterData from1',filterData);
+       
         setAllReview(filterData);
         
     };
    
 
     const handleSelect = (selectedOption) => {
-        console.log('Selected:', selectedOption.value);
-         // Logs the selected option
+        // console.log('Selected:', selectedOption.value);
+        // Logs the selected option
          const option= selectedOption.value;
           //setListStatus(true);
          if(option=='Rating'){
-           console.log('Data from handleSelect: ', allReview);
+           //console.log('Data from handleSelect: ', allReview);
             
            const copyData= [...allReview];
-           console.log('copyData',copyData);
+          // console.log('copyData',copyData);
            copyData.sort(compareByRating);
-           console.log('SortByRating data: ',allReview);
+          // console.log('SortByRating data: ',allReview);
 
            setAllReview(copyData);
         
         }
         else{
             const copyData= [...allReview];
-            console.log('copyData',copyData);
+            //console.log('copyData',copyData);
             copyData.sort(compareByYear);
             
             setAllReview(copyData);
