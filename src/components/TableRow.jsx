@@ -10,14 +10,7 @@ const TableRow = ({ game, index }) => {
             <td className='text-center'>{index + 1}</td>
             <td><h2>{game.game_title}</h2>
                 <img src={game.game_url} className='' alt="" />
-                {/* <div>{game.rating}</div> */}
-                {/* <StarRatings
-                    rating={game.rating || 0}
-                    starRatedColor="blue"
-                    // changeRating={this.changeRating}
-                    numberOfStars={5}
-                    name='rating'
-                /> */}
+               
 
                 <div className='flex items-center gap-4'>
                     <ReactStars count={5}

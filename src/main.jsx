@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/review/:id',
-        element: <ExploreDetails></ExploreDetails>,
+        element: <PrivateRoute> <ExploreDetails></ExploreDetails> </PrivateRoute>,
         loader: ({params})=> fetch(`https://sunjit-server.vercel.app/reviews/${params.id}`)
         
       }

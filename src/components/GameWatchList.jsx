@@ -16,7 +16,8 @@ const GameWatchList = () => {
         <div className='mt-5'>
             {/* <h2>Hello from GameWatchList, total watchList: {watchListLoaded.length} </h2>
              */}
-            <div className='w-11/12 lg:w-10/12 mx-auto '>
+             <h2 className='py-4 text-2xl font-bold text-center'>My WatchList</h2>
+            <div className='lg:px-4 '>
 
                 <table style={{ width: "100%" }}>
                     <thead>
