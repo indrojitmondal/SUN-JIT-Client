@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReactStars from 'react-stars';
 
 const HighRateGameCard = ({review}) => {
@@ -36,11 +37,11 @@ const HighRateGameCard = ({review}) => {
                            </p>
 
                         {/* View Details Button */}
-                        <button className="mt-5 flex items-center rounded-3xl">
+                        <Link to={`/review/${_id}`} className="mt-5 flex items-center rounded-3xl">
                             <h3 className="lg:text-lg text-base font-bold">Explore Details</h3>
 
                             {/* Arrow Icon */}
-                            <div className="ml-1 bg-orange-400 rounded-[50%] w-8 h-8">
+                            <div className="ml-1 bg-orange-300 rounded-[50%] w-8 h-8">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -56,7 +57,7 @@ const HighRateGameCard = ({review}) => {
                                     />
                                 </svg>
                             </div>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
