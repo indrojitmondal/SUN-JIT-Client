@@ -41,7 +41,7 @@ const AddReviews = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Data from API:', data);
+               // console.log('Data from API:', data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Submitted',

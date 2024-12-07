@@ -7,7 +7,7 @@ const GameWatchList = () => {
     const watchListLoaded = useLoaderData();
     //const myWatchList = useLoaderData();
     const {user}= useContext(AuthContext);
-    console.log('watchList:',watchListLoaded);
+   // console.log('watchList:',watchListLoaded);
 
    // const myWatchList = watchListLoaded;
     
