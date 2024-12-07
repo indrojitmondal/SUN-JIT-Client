@@ -35,8 +35,13 @@ const TableRow = ({ game, index }) => {
             </td>
             <td> <p className='lg:px-3'>{game.genres}</p> </td>
             <td>
-                <p className='lg:px-3'> {game.game_description} </p>
-        
+                 <div>
+                    
+                 <p className='lg:px-3'> <span className='font-bold'> Game Description: </span> {game.game_description} </p>
+                 <h2 className='lg:px-3 font-bold'> Reviewer's Name: {game.name} </h2>
+                 <h2 className='lg:px-3 font-bold'> Reviewer's Email: {game.email} </h2>
+   
+                 </div>
 
             </td>
 

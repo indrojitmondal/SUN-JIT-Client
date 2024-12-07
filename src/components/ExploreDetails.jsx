@@ -10,7 +10,15 @@ const ExploreDetails = () => {
     
     //console.log('Name from Explore Details: ', name);
     //console.log('Data from Explore Details: ', loadedData);
-    
+     const myWatchList= {
+        
+        game_url, game_title, game_description, rating, publication_year, genres, name, email,
+        user_email: `${user.email}`
+
+
+
+     };
+     console.log('Hello myWatchList',myWatchList);
     const handleAddToWatchList=()=>{
        // alert('Clicked Add to WatchList');
         console.log('Post this data to watchList', loadedData);
@@ -20,7 +28,7 @@ const ExploreDetails = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(loadedData)
+            body: JSON.stringify(myWatchList)
         })
             .then(res => res.json())
             .then(data => {
