@@ -33,12 +33,16 @@ const TableRow = ({ game, index }) => {
                 </div>
 
             </td>
-            <td>{game.genres}</td>
-            <td>{game.game_description}</td>
+            <td> <p className='lg:px-3'>{game.genres}</p> </td>
+            <td>
+                <p className='lg:px-3'> {game.game_description} </p>
+        
+
+            </td>
 
 
 
-            <td>{game.publication_year}</td>
+            <td> <p className='lg: px-2'> {game.publication_year} </p> </td>
 
         </tr>
 
