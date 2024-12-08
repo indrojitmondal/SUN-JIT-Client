@@ -4,7 +4,7 @@ import { AuthContext } from './providers/AuthProvider';
 import ReviewCard from './ReviewCard';
 
 const MyReview = () => {
-    const loadedReviews = useLoaderData();
+    //const loadedReviews = useLoaderData();
     const { user } = useContext(AuthContext);
     const { myReviews, setMyReviews } = useContext(AuthContext);
     const { loading, setLoading } = useState(true);

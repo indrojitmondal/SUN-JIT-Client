@@ -1,24 +1,39 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TableRow from './TableRow';
 import { AuthContext } from './providers/AuthProvider';
 import TableRowMobile from './TableRowMobile';
 
 const GameWatchList = () => {
-    const watchListLoaded = useLoaderData();
-    //const myWatchList = useLoaderData();
+    const [loading, setLoading]=useState(true);
     const {user}= useContext(AuthContext);
-    console.log('watchList:',watchListLoaded);
+    const [myWatchList, setMyWatchList]= useState([]);
+    useEffect(()=>{
+        const fetchData = async()=>{
+            
+            try {
+                const response = await fetch('https://sunjit-server.vercel.app/myWatchList');
+                const data = await response.json();
+                const myList=  data.filter(review => review.user_email === user.email );
+                setMyWatchList(myList);
+                setLoading(false);
+            } catch (error) {
+                setLoading(false);
+            }
 
-   // const myWatchList = watchListLoaded;
-    
-    const  myWatchList= watchListLoaded.filter(review => review.user_email === user.email );
-    console.log('My watchList:',myWatchList);
+        }
+        fetchData();
+    })
+
+
     return (
+       
         <div className='mt-5'>
-            {/* <h2>Hello from GameWatchList, total watchList: {watchListLoaded.length} </h2>
-             */}
-             <h2 className='py-4 text-2xl font-bold text-center'>My WatchList</h2>
+            
+            {
+            loading ? ( <p className="text-xl font-bold text-center">Please Wait...</p> ): 
+            (<>
+                <h2 className='py-4 text-2xl font-bold text-center'>My WatchList</h2>
             
             <div className='lg:px-4 hidden lg:block w-11/12 mx-auto lg:w-full lg:mx-0 '>
 
@@ -56,18 +71,30 @@ const GameWatchList = () => {
                             <th> Year</th> */}
                         </tr>
                     </thead>
-                    <tbody> 
-
+                    {
+                        myWatchList.length>0 && 
+                        <tbody> 
+                  
+                      
+                        
+                      
                         {
                            myWatchList.map( (game,idx)=> <TableRowMobile key={idx} index={idx} game={game}></TableRowMobile>)  
                         }
+                    
                         
-                        {/* <TableRow></TableRow> */}
+                       
+                    
                        
                     </tbody>
+                    }
+                    
                 </table>
 
             </div>
+                
+                </>)
+        }
 
         </div>
     );
