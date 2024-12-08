@@ -80,8 +80,8 @@ const TableRow = ({ game, index }) => {
 
             <td> <p className='lg: px-2'> {game.publication_year} </p> </td>
             
-            <td> <button onClick={()=>handleDelete(_id)} className='font-bold px-1'>Delete</button> </td>
-        
+            {/* <td> <button onClick={()=>handleDelete(_id)} className='font-bold px-1'>Delete</button> </td>
+         */}
         </tr>
 
     );

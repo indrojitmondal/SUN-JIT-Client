@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         header_bg: '#324765',
+        primary: '#FFA500'
         
      },
      backgroundImage: {
