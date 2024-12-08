@@ -31,14 +31,14 @@ const HighRateGameCard = ({review}) => {
 
                     {/* Text Content Section */}
                     <div className="lg:flex-1">
-                        <h2 className="text-text_color text-xl lg:text-2xl font-extrabold">{game_title}</h2>
+                        <h2 className="text-text_color text-xl lg:text-xl font-bold">{game_title}</h2>
                         <p className="mt-4  ">
                            {game_description}
                            </p>
 
                         {/* View Details Button */}
                         <Link to={`/review/${_id}`} className="mt-5 flex items-center rounded-3xl">
-                            <h3 className="lg:text-lg text-base font-bold">Explore Details</h3>
+                            <h3 className="lg:text-base text-base font-bold">Explore Details</h3>
 
                             {/* Arrow Icon */}
                             <div className="ml-1 bg-orange-300 rounded-[50%] w-8 h-8">

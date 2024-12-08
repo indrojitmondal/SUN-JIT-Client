@@ -16,7 +16,7 @@ const ExploreGame = () => {
                     <div className="max-w-5xl mx-auto text-center space-y-6">
 
                         <Slide>
-                            <h1 className="font-bold text-center text-p2 mt-1 text-3xl">TYPE OF GAMES</h1>
+                            <h1 className="font-bold text-center text-p2 mt-1 text-2xl">TYPE OF GAMES</h1>
 
                         </Slide>
 
@@ -33,8 +33,8 @@ const ExploreGame = () => {
                                 <img src="https://static.vecteezy.com/system/resources/previews/026/452/755/non_2x/action-game-icon-vector.jpg" alt="Concept" className="rounded-xl" />
                             </figure>
                             <div className="card-body">
-                                <h2 className="card-title text-xl font-extrabold">Action Games</h2>
-                                <p className="text-text_color font-medium">
+                                <h2 className="card-title text-xl font-bold">Action Games</h2>
+                                <p className=" ">
                                     Fast-paced games focusing on hand-eye coordination and quick reflexes, often involving combat or challenges
                                 </p>
                             </div>
@@ -45,8 +45,8 @@ const ExploreGame = () => {
                                 <img src="https://cdn1.iconfinder.com/data/icons/game-design-butterscotch-vol-1/256/Adventure_Game-512.png" alt="Design Process" className="rounded-xl" />
                             </figure>
                             <div className="card-body">
-                                <h2 className="card-title text-xl font-extrabold">Adventure Games</h2>
-                                <p className="text-text_color font-medium">
+                                <h2 className="card-title text-xl font-bold">Adventure Games</h2>
+                                <p className=" ">
                                     Story-driven games that emphasize exploration, problem-solving, and narrative experiences.
                                 </p>
                             </div>
@@ -57,8 +57,8 @@ const ExploreGame = () => {
                                 <img src="https://cdn-icons-png.flaticon.com/512/8193/8193239.png" alt="Supervision" className="rounded-xl" />
                             </figure>
                             <div className="card-body">
-                                <h2 className="card-title text-xl font-extrabold">Puzzle Games</h2>
-                                <p className="text-text_color font-medium">
+                                <h2 className="card-title text-xl font-bold">Puzzle Games</h2>
+                                <p className="">
                                     Games that challenge the mind with logic, strategy, and critical thinking.
                                 </p>
                             </div>
@@ -69,8 +69,8 @@ const ExploreGame = () => {
                                 <img src="https://cdn-icons-png.flaticon.com/512/10069/10069102.png" alt="Budget Planning" className="rounded-xl" />
                             </figure>
                             <div className="card-body">
-                                <h2 className="card-title text-xl font-extrabold">Simulation Games</h2>
-                                <p className="text-text_color font-medium">
+                                <h2 className="card-title text-xl font-bold">Simulation Games</h2>
+                                <p className="">
                                     Games that replicate real-world activities or systems, like building cities, managing businesses, or flying planes.
                                 </p>
                             </div>

@@ -2,13 +2,14 @@ import React from 'react';
 import { IoMdCall } from "react-icons/io";
 import { MdOutlineMail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import { Slide } from 'react-awesome-reveal';
 
 const Contact = () => {
     return (
         <div>
             <section id="contact" className="my-10 w-11/12 lg:w-10/12 mx-auto">
-                <h1 className="font-bold text-center text-p2 mt-1 text-3xl">CONTACT US</h1>
-               
+               <Slide>  <h1 className="font-bold text-center text-p2 mt-1 text-2xl">CONTACT US</h1>
+                </Slide>
 
                 <div className="mt-2 up-container grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="contact-description flex flex-col gap-8">
