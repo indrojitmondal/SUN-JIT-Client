@@ -41,11 +41,16 @@ const MyReview = () => {
                     <>
                         {
                         myReviews.length > 0 ? (
+                            <div>
+                                  <h2 className='py-4 text-2xl font-bold text-center'>My Reviews</h2>
+
                             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                                 {
                                     myReviews?.map((review, idx) => <ReviewCard key={idx} review={review} ></ReviewCard>)
                                 }
-                            </div>) : (
+                            </div> 
+                            </div>
+                            ) : (
                                 <p className="text-center text-xl">No reviews found. Please Add Review. </p>
                             )
                         }
