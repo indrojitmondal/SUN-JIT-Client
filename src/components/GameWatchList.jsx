@@ -32,8 +32,9 @@ const GameWatchList = () => {
             
             {
             loading ? ( <p className="text-xl font-bold text-center">Please Wait...</p> ): 
-            (<>
-                <h2 className='py-4 text-2xl font-bold text-center'>My WatchList</h2>
+            (
+            <>
+             <h2 className='py-4 text-2xl font-bold text-center'>My WatchList</h2>
             
             <div className='lg:px-4 hidden lg:block w-11/12 mx-auto lg:w-full lg:mx-0 '>
 
@@ -101,3 +102,5 @@ const GameWatchList = () => {
 };
 
 export default GameWatchList;
+
+// Thik Ache....
