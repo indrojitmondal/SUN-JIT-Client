@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TableRow from './TableRow';
 import { AuthContext } from './providers/AuthProvider';
+import TableRowMobile from './TableRowMobile';
 
 const GameWatchList = () => {
     const watchListLoaded = useLoaderData();
@@ -17,7 +18,7 @@ const GameWatchList = () => {
             {/* <h2>Hello from GameWatchList, total watchList: {watchListLoaded.length} </h2>
              */}
              <h2 className='py-4 text-2xl font-bold text-center'>My WatchList</h2>
-            <div className='lg:px-4 '>
+            <div className='lg:px-4 hidden lg:block w-11/12 mx-auto lg:w-full lg:mx-0 '>
 
                 <table style={{ width: "100%" }}>
                     <thead>
@@ -33,6 +34,30 @@ const GameWatchList = () => {
 
                         {
                            myWatchList.map( (game,idx)=> <TableRow key={idx} index={idx} game={game}></TableRow>)  
+                        }
+                        
+                        {/* <TableRow></TableRow> */}
+                       
+                    </tbody>
+                </table>
+
+            </div>
+            <div className='lg:px-4 block lg:hidden w-11/12 mx-auto lg:w-full lg:mx-0 '>
+
+                <table style={{ width: "100%" }}>
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Game Description </th>
+                            <th>Published</th>
+                            {/* <th>Description</th>
+                            <th> Year</th> */}
+                        </tr>
+                    </thead>
+                    <tbody> 
+
+                        {
+                           myWatchList.map( (game,idx)=> <TableRowMobile key={idx} index={idx} game={game}></TableRowMobile>)  
                         }
                         
                         {/* <TableRow></TableRow> */}
