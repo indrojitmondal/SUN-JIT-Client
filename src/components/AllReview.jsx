@@ -3,14 +3,15 @@ import { useLoaderData } from 'react-router-dom';
 import AllReviewCard from './AllReviewCard';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const AllReview = () => {
     const [allReviewLoaded, setAllReviewLoaded] = useState([]);
-
+   
     //console.log('AllReviewLoaded: ', allReviewLoaded);
     const [allReview, setAllReview] = useState(allReviewLoaded)
     const [loading, setLoading] = useState(true);
-
+    const [color, setColor] = useState("#ffffff");
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -20,7 +21,7 @@ const AllReview = () => {
                 setAllReview(data);
                 setLoading(false);
             } catch (error) {
-                console.error('Error fetching reviews:', error);
+                //console.error('Error fetching reviews:', error);
                 setLoading(false); // Stop loading even if there's an error
             }
         };
@@ -87,9 +88,17 @@ const AllReview = () => {
     return (
         <div className="w-11/12 lg:w-10/12 mx-auto pt-5">
             {loading ? (
-                <p className="text-xl font-bold text-center">Please Wait...</p>
-            ) : (
+             <p className="text-xl font-bold text-center">Please Wait...</p>
+        
+             //     <ClipLoader
+        //     color="#36d7b7" // Customizable color
+        //     size={100}       // Customizable size
+        //     aria-label="Loading Spinner"
+        //   />
+                ) : (
                 <>
+                    <h2 className='py-4 text-2xl font-bold text-center'>All Reviews</h2>
+            
                     {/* Dropdowns */}
                     <div className="flex items-center">
                         <h2 className="text-xl font-bold">Genre Type</h2>
