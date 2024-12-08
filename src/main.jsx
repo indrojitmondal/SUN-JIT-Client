@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: '/myWatchlist',
         element : <PrivateRoute> <GameWatchList></GameWatchList>  </PrivateRoute> , 
-        loader: ()=> fetch('https://sunjit-server.vercel.app/myWatchList')
+        //loader: ()=> fetch('https://sunjit-server.vercel.app/myWatchList')
       },
       {
         path: '/review/:id',
