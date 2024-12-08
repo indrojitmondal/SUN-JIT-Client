@@ -8,11 +8,12 @@ const GameWatchList = () => {
     const watchListLoaded = useLoaderData();
     //const myWatchList = useLoaderData();
     const {user}= useContext(AuthContext);
-   // console.log('watchList:',watchListLoaded);
+    console.log('watchList:',watchListLoaded);
 
    // const myWatchList = watchListLoaded;
     
-    const myWatchList = watchListLoaded.filter(review => review.user_email === user.email );
+    const  myWatchList= watchListLoaded.filter(review => review.user_email === user.email );
+    console.log('My watchList:',myWatchList);
     return (
         <div className='mt-5'>
             {/* <h2>Hello from GameWatchList, total watchList: {watchListLoaded.length} </h2>

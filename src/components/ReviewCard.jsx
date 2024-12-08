@@ -58,7 +58,7 @@ const ReviewCard = ({review}) => {
                 <h2>Publishing Year: {publication_year} </h2>
             </div>
             {/* Right */}
-            <div>
+            <div className='px-2'>
                 <Link to={`/updateReview/${_id}`} className='flex items-center'>
 
                     <h2>Update</h2>

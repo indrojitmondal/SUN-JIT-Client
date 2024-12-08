@@ -16,7 +16,7 @@ const MyReview = () => {
         //console.log('Data from useEffect: ', loadedData);
        // console.log('Email from useEffect: ', user.email);
         const myData=loadedData.filter(review=>review.email===user.email)
-        //console.log('My data: ', myData);
+        console.log('My data: ', myData);
         setMyReviews(myData);
     },[])
     //const {game_url,game_title,rating,publication_year}= reviews;
