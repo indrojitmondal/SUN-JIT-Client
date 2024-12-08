@@ -63,14 +63,14 @@ const GameWatchList = () => {
                                         </table>
 
                                     </div>
-                                    <div className='lg:px-4 block lg:hidden w-11/12 mx-auto lg:w-full lg:mx-0 '>
+                                    <div className='lg:px-4 block lg:hidden  lg:w-full lg:mx-0 '>
 
                                         <table style={{ width: "100%" }}>
                                             <thead>
                                                 <tr>
                                                     <th >Number</th>
                                                     <th >Game Description </th>
-                                                    <th>Published</th>
+                                                    {/* <th>Published</th> */}
                                                     {/* <th>Description</th>
                             <th> Year</th> */}
                                                 </tr>

@@ -46,7 +46,7 @@ const TableRow = ({ game, index }) => {
 
         <tr>
             <td className='text-center'>{index + 1}</td>
-            <td><h2>{game.game_title}</h2>
+            <td><h2 className='font-bold'>{game.game_title}</h2>
                 <img src={game.game_url} className='' alt="" />
                
 
