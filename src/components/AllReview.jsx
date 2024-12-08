@@ -10,7 +10,7 @@ const AllReview = () => {
     //console.log('AllReviewLoaded: ', allReviewLoaded);
     const [allReview, setAllReview] = useState(allReviewLoaded)
     const [loading, setLoading] = useState(true);
-    
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -86,47 +86,48 @@ const AllReview = () => {
 
     return (
         <div className="w-11/12 lg:w-10/12 mx-auto pt-5">
-            {/* Dropdown */}
+            {loading ? (
+                <p className="text-xl font-bold text-center">Please Wait...</p>
+            ) : (
+                <>
+                    {/* Dropdowns */}
+                    <div className="flex items-center">
+                        <h2 className="text-xl font-bold">Genre Type</h2>
+                        <Dropdown
+                            className="w-1/2 py-4 mx-auto"
+                            options={options1}
+                            onChange={handleSelect1}
+                            value={defaultOption1}
+                            placeholder="Select an option"
+                        />
+                    </div>
 
-            <div className='flex items-center'>
-                <h2 className='text-xl font-bold'>Genre Type</h2>
+                    <div className="flex items-center">
+                        <h2 className="text-lg font-bold">Sort by</h2>
+                        <Dropdown
+                            className="w-1/2 py-4 mx-auto"
+                            options={options}
+                            onChange={handleSelect}
+                            value={defaultOption}
+                            placeholder="Select an option"
+                        />
+                    </div>
 
-                <Dropdown className='w-1/2 py-4 mx-auto'
-                    options={options1}
-                    onChange={handleSelect1}
-                    value={defaultOption1}
-                    placeholder="Select an option"
-                />
-            </div>
-            {/*  */}
-
-
-            <div className='flex items-center'>
-                <h2 className='text-lg font-bold'>Sort by</h2>
-
-                <Dropdown className='w-1/2 py-4 mx-auto'
-                    options={options}
-                    onChange={handleSelect}
-                    value={defaultOption}
-                    placeholder="Select an option"
-                />
-            </div>
-
-            {/* Display Reviews */}
-
-            {
-                loading && <p className='text-xl font-bold'>Please Wait</p>
-            }
-
-            {allReview.length > 0 && (
-                <div className="grid md:grid-cols-2 mt-5 lg:grid-cols-3 gap-4">
-                    {allReview?.map((review, idx) => (
-                        <AllReviewCard key={idx} review={review}></AllReviewCard>
-                    ))}
-                </div>
+                    {/* Display Reviews */}
+                    {allReview.length > 0 ? (
+                        <div className="grid md:grid-cols-2 mt-5 lg:grid-cols-3 gap-4">
+                            {allReview.map((review, idx) => (
+                                <AllReviewCard key={idx} review={review} />
+                            ))}
+                        </div>
+                    ) : (
+                        <p className="text-center text-xl">No reviews found.</p>
+                    )}
+                </>
             )}
         </div>
     );
+
 };
 
 export default AllReview;
