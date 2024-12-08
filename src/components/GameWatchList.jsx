@@ -23,11 +23,11 @@ const GameWatchList = () => {
                 <table style={{ width: "100%" }}>
                     <thead>
                         <tr>
-                            <th>Number</th>
-                            <th>Game</th>
-                            <th>Genre</th>
-                            <th>Description</th>
-                            <th> Year</th>
+                            <th className='lg:text-lg'>Number</th>
+                            <th className='lg:text-lg'>Game</th>
+                            <th className='lg:text-lg'>Genre</th>
+                            <th className='lg:text-lg'>Description</th>
+                            <th className='lg:text-lg'> Year</th>
                         </tr>
                     </thead>
                     <tbody> 
@@ -47,8 +47,8 @@ const GameWatchList = () => {
                 <table style={{ width: "100%" }}>
                     <thead>
                         <tr>
-                            <th>Number</th>
-                            <th>Game Description </th>
+                            <th >Number</th>
+                            <th >Game Description </th>
                             <th>Published</th>
                             {/* <th>Description</th>
                             <th> Year</th> */}
