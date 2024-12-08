@@ -7,18 +7,8 @@ const MyReview = () => {
     //const loadedReviews = useLoaderData();
     const { user } = useContext(AuthContext);
     const { myReviews, setMyReviews } = useContext(AuthContext);
-    const { loading, setLoading } = useState(true);
-    // useEffect(()=>{
-
-    //     const loadedData= loadedReviews;
-    //     //setMyReviews(loadedReviews);
-
-    //     //console.log('Data from useEffect: ', loadedData);
-    //    // console.log('Email from useEffect: ', user.email);
-    //     const myData=loadedData.filter(review=>review.email===user.email)
-    //     console.log('My data: ', myData);
-    //     setMyReviews(myData);
-    // },[])
+    const [ loading, setLoading ] = useState(true);
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -49,12 +39,15 @@ const MyReview = () => {
 
                 ) : (
                     <>
-                        {myReviews.length > 0 &&
+                        {
+                        myReviews.length > 0 ? (
                             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                                 {
                                     myReviews?.map((review, idx) => <ReviewCard key={idx} review={review} ></ReviewCard>)
                                 }
-                            </div>
+                            </div>) : (
+                                <p className="text-center text-xl">No reviews found. Please Add Review. </p>
+                            )
                         }
 
                     </>
