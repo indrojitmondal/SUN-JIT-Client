@@ -43,15 +43,16 @@ const Footer = () => {
                                     <div className=''>
                                         <h3 className='text-lg font-semibold'>Follow Us</h3>
                                         <div className="footer-icon-container flex items-center">
-                                            <a href="https://www.facebook.com/engr.indrojit.mondal">
+                                            <Link to="https://www.facebook.com/engr.indrojit.mondal">
                                                 <img src="https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" className='w-20 h-20' alt="Facebook" />
-                                            </a>
-                                            <a href="">
+                                            </Link>
+                                            
+                                            <Link to="https://www.linkedin.com/in/indrojit-mondal/">
                                                 <img src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png" className='w-20 h-20'  alt="LinkedIn" />
-                                            </a>
-                                            <a href="">
-                                                <img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/575/small/youtube-logo-youtube-icon-transparent-free-png.png" className='w-20 h-20' alt="Twitter" />
-                                            </a>
+                                            </Link>
+                                            <Link to="https://www.youtube.com/@indrojitmondal8996">
+                                                <img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/575/small/youtube-logo-youtube-icon-transparent-free-png.png" className='w-20 h-20' alt="Youtube" />
+                                            </Link>
                                         </div>
 
                                     </div>
@@ -62,29 +63,19 @@ const Footer = () => {
                                     <h3 className='text-lg font-semibold space-y-3 '>Quick Links</h3>
 
                                     <ul className='pl-8 list-disc flex flex-col '>
-                                        {/* <li>Home</li>
-                                        <li>Services</li>
-                                        <li>About</li>
-                                        <li>Contact</li> */}
-                                        <Link>Home</Link>
-                                        <Link>Add Review</Link>
-                                        <Link>My Review</Link>
-                                        <Link>Game WatchList</Link>
+                                       
+                                        <Link to={'/'}>Home</Link>
+                                        <Link to={'/reviews'}>All Reviews</Link>
+                                        <Link to={'/addReview'}>Add Review</Link>
+                                        <Link to={'/myReviews'}>My Reviews</Link>
+                                        <Link to={'/myWatchlist'}>Game WatchList</Link>
                                     </ul>
 
 
                                 </div>
                                 <div className="subscribes flex flex-col space-y-3 ">
 
-                                    {/* <h3 className='text-lg font-semibold'>Subscribe</h3>
-                                    <p className=''>Subscribe to our newsletter for the latest updates.</p>
-
-                                    <div className="  flex items-center gap-4">
-                                        <input type="text" id='mail1' placeholder="Enter your email" className="input text-black input-bordered" />
-                                        <button
-                                           
-                                            className="gradient-button">Subscribe</button>
-                                    </div> */}
+                              
 
                                     <h3 className='text-lg font-semibold'>Our Address</h3>
 
