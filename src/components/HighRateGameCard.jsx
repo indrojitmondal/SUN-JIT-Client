@@ -24,7 +24,7 @@ const HighRateGameCard = ({review}) => {
 
                             </ReactStars>
 
-                            {/* {game.rating} */}
+                            {rating}
                             
                         </div>
                     </div>
